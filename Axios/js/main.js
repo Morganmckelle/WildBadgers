@@ -1,13 +1,19 @@
-function sendMessage ()
+function sendMessage (ev)
 {
-	axios.post('/WildBadgers/Axios/email.php', 
-		{
-		name: document.getElementById('name'), 
-		from: document.getElementById('from'), 
-		body: document.getElementById('body')
-		});
-		
-		
+	ev.preventDefault();
+	var params = new URLSearchParams();
+	params.append('name', document.getElementById('name').value);
+	params.append('from', document.getElementById('from').value);
+	params.append('body', document.getElementById('body').value);
+	axios.post('/WildBadgers/Axios/email.php', params)
+	.then(function (response) {
+	      console.log(response);
+        })
+	  .catch(function (error) {
+	      console.log(error);
+        });
+
+	window.location = "thanks.html";
 
 }
 

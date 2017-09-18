@@ -1,10 +1,10 @@
 <?php 
 
+
   $name = $_REQUEST['name'];
   $from = $_REQUEST['from'];
   $body = $_REQUEST['body'];
 
-  var_dump($_REQUEST);
 
   $to = "arthur.schoenfeld@gmail.com"; //recipient 
  // $to = "hiro@mrhiro.com"; //recipient 
